@@ -29,9 +29,6 @@ with open('accounts.csv', 'w', newline='') as account_file:
         username = 'team0' + ('0%d' % i if i < 10 else '%d' % i)
         password = secrets.token_urlsafe(12)
 
-        print(", ".join([username, password]))
-        csv_writer.writerow([username, password])
-
         add_team_user_link = driver.find_element(by=By.XPATH,
                                                  value='/html/body/div/div/div/div[1]/div[1]/table/tbody/tr[7]/td/a')
         add_team_user_link.click()
